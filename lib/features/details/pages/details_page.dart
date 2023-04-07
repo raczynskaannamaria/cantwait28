@@ -19,7 +19,7 @@ class DetailsPage extends StatelessWidget {
         title: const Text('Can\'t Wait 🤩'),
       ),
       body: BlocProvider(
-        create: (context) => DetailsCubit(ItemsRepository()),
+        create: (context) => DetailsCubit(ItemsRepository())..getItemWithId(id),
         child: BlocBuilder<DetailsCubit, DetailsState>(
           builder: (context, state) {
             final itemModel = state.itemModel;
